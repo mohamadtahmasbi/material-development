@@ -4,3 +4,261 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Arial;
+  src: url("Arial, Helvetica, sans-serif");
+}
+
+@font-face {
+  font-family: Times;
+  src: url("Times New Roman, Times, serif");
+}
+
+:root {
+  --primary-color: #2a52be;
+  --secondary-color: #dce3f7;
+  --tertairy-color: #ffffff;
+  --Arial-font: Arial;
+  --times-font: Times;
+}
+
+/* header */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+
+  .header__pattern {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+
+    .header__pattern__img {
+      opacity: 0.03;
+    }
+  }
+
+  .header__svg {
+    .header__svg__img {
+      height: 800px;
+      position: absolute;
+      top: -30px;
+      left: 150px;
+    }
+  }
+
+  .header__title {
+    font-family: var(--times-font);
+    position: absolute;
+    width: 900px;
+    height: 120px;
+    right: 0;
+    top: calc(50% - 140px / 2);
+    padding-left: 30px;
+    background-color: var(--tertairy-color);
+
+    h1 {
+      line-height: 120px;
+      font-size: 100px;
+      text-transform: uppercase;
+      color: var(--primary-color);
+    }
+  }
+
+  .header__introduction {
+    position: absolute;
+    top: 480px;
+    left: calc(50% - 300px / 2);
+    text-transform: capitalize;
+    color: var(--tertairy-color);
+
+    p {
+      font-family: var(--Arial-font);
+      font-size: 35px;
+    }
+
+    p.last__p {
+      font-family: var(--times-font);
+      font-size: 25px;
+      margin-top: 30px;
+    }
+  }
+}
+
+/* title divider  */
+
+.title__divider {
+  font-family: var(--times-font);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 250px;
+  margin-top: 200px;
+  font-size: 35px;
+
+  .title__divider__number {
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+    color: var(--tertairy-color);
+    background-color: var(--primary-color);
+  }
+}
+
+/* main  */
+
+.main {
+  margin-top: 100px;
+  padding: 0 70px;
+
+  .main__title {
+    font-family: var(--Arial-font);
+    font-weight: bold;
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    padding-left: 45px;
+    line-height: 45px;
+  }
+
+  hr {
+    margin-bottom: 100px;
+    border: 1px solid #000;
+  }
+
+  /* vocab section  */
+
+  .main__vocab__section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 60px 120px;
+    background-color: var(--secondary-color);
+
+    .main__vocab__section__instruction {
+      font-family: var(--times-font);
+      font-weight: bold;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    .article {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 220px;
+      margin: 40px 0;
+
+      .main__vocab__section__content {
+        .main__vocab__section__content__top {
+          display: flex;
+          align-items:baseline;
+          gap: 10px;
+
+          .main__vocab__section__content__top__name {
+            font-family: var(--times-font);
+            font-size: 40px;
+          }
+
+          i {
+            color: var(--primary-color);
+            font-size: 20px;
+          }
+
+          .main__vocab__section__content__top__phonetic {
+            color: var(--primary-color);
+            font-family: var(--Arial-font);
+            font-size: 20px;
+          }
+        }
+
+        .main__vocab__section__content__bottom {
+          font-family: var(--Arial-font);
+          margin-top: 20px;
+
+          .main__vocab__section__content__bottom__definition {
+            width: 450px;
+          }
+
+          .main__vocab__section__content__bottom__example {
+            color: #828282;
+          }
+        }
+      }
+
+      .main__vocab__section__image {
+        width: 190px;
+        height: 200px;
+        border: 1px solid #000;
+        box-shadow: 0 0 2px #000;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  /* titles of vocab and reading section  */
+
+  .main__reading__section__title,
+  .main__vocab__section__title {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 37px;
+    width: fit-content;
+    padding: 7px 17px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: var(--Arial-font);
+    color: var(--tertairy-color);
+    background-color: var(--primary-color);
+  }
+
+  /* reading section  */
+
+  .main__reading__section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 150px 0;
+    padding: 120px;
+    background-color: var(--secondary-color);
+
+    i {
+      font-size: 15px;
+    }
+
+    .main__reading__section__passage {
+      font-family: var(--Arial-font);
+
+      h2 {
+        font-size: 70px;
+        width: 350px;
+      }
+
+      img {
+        margin: 20px;
+        width: 580px;
+        float: right;
+        margin: -140px 10px 0 25px;
+      }
+
+      p {
+        font-size: 28px;
+        width: 1100px;
+        text-align: justify;
+      }
+    }
+  }
+}
